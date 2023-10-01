@@ -30,10 +30,13 @@ const onSelectOptionChange = option => {
       const cat = response.data[0];
       const catDetails = cat.breeds[0];
       const markup = `
-            <img src=${cat.url} width='${cat.width}px' height='${cat.height}px'></img>
-            <p><b>Denumirea rasei</b>: ${catDetails.name}</p>
-            <p><b>Temperament</b>: ${catDetails.temperament}</p>
-            <p><b>Descriere</b>: ${catDetails.description}</p>`;
+      <div class="cat-pic">
+            <img class="cat-img" src=${cat.url}></img>
+            </div>
+            <div class="cat-description">
+            <h2 class="cat-name"> ${catDetails.name}</h2>
+            <p class="cat-temp"><b>Temperament</b>: ${catDetails.temperament}</p>
+            <p class="cat-desc"><b>Description</b>: ${catDetails.description}</p></div>`;
 
       document.querySelector('.cat-info').innerHTML = markup;
     })
